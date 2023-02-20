@@ -1,0 +1,6 @@
+{% extends 'includes/base.html'%}
+{% block title%} Account {% endblock %}
+{% block content %}
+    <p class="h1">Binevenue sur la page account</p>
+    <a href="{{ url_for('index', nom='monica', age=23) }}">return to main page</a>
+{% endblock %}
