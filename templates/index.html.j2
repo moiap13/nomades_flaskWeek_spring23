@@ -1,0 +1,8 @@
+{% extends 'includes/base.html'%}
+{% block title%} Acceuil {% endblock %}
+{% block content %}
+    <h1 class="h1">Bonjour {{ uid }}</h1>
+    <p class="h1">Bienvenue sur mon premier site avec Flask</p>
+    <p>Votre age est de : {{ age }}</p>
+    <a href="{{ url_for('account') }}">aller sur la page account</a>
+{% endblock %}

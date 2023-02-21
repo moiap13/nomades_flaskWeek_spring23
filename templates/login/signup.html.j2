@@ -1,0 +1,25 @@
+{% extends 'includes/base.html'%}
+{% block title%} SignUp {% endblock %}
+{% block content %}
+    <form method="POST" action="#">
+        <table>
+            <tr>
+               <td>uid</td> 
+               <td>
+                  <input type="text" name="uid" />
+                </td> 
+            </tr>
+            <tr>
+               <td>pwd</td> 
+               <td>
+                  <input type="password" name="pwd" />
+                </td> 
+            </tr>
+            <tr>
+               <td>
+                <input type="submit" value="Sign Up" />
+               </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
