@@ -1,0 +1,32 @@
+{%extends 'includes/base.html'%}
+
+{%block title%}Login{%endblock%}
+
+{%block content%}
+
+<form action="#" method="POST">
+    <table>
+        <tr>
+            <td>{{ form.uid.label }}</td> 
+            <td>
+                {{ form.uid(class="form-control")}}
+                {% for error in field.errors %}
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        {{ error }}
+                    </small>
+                {% endfor %}
+            </td>
+        </tr>
+         <tr>
+            <td>{{ form.pwd.label }}</td> 
+            <td>
+                {{ form.pwd(class="form-control")}}
+            </td> 
+        </tr>
+        <tr>
+            <td>
+            <input class="btn btn-primary" type="submit" value="Login" />
+            </td>
+        </tr>
+    </table>
+{%endblock%}
