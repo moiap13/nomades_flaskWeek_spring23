@@ -1,46 +1,12 @@
 {% extends 'includes/base.html'%}
 {% block title%} Login {% endblock %}
 {% block content %}
+{% from "includes/_formsHelper.html" import showInput%}
     <form method="POST" action="#">
         <table>
-            <tr>
-               <td>
-                 {{ form.uid.label }}
-                
-               </td> 
-               <td>
-                {{ form.uid(class="form-control") }}
-                {% for error in form.uid.errors %}
-                    <small id="" class="form-text text-muted">
-                        {{ error }}
-                    </small>
-                {% endfor %}
-                </td> 
-            </tr>
-            <tr>
-               <td>
-                 {{ form.pwd.label }}
-               </td> 
-               <td>
-                {{ form.pwd() }}
-                </td> 
-            </tr>
-             <tr>
-               <td>
-                 {{ form.pwd2.label }}
-               </td> 
-               <td>
-                {{ form.pwd2() }}
-                <ul>
-                    {% for error in form.pwd.errors %}
-                        <li>
-                            {{error}}
-                        </li>
-                    {% endfor %}
-                </ul>
-                </td> 
-
-            </tr>
+            {{ showInput(form.uid, class="form-control")}}
+            {{ showInput(form.pwd, class="form-control")}}
+            {{ showInput(form.pwd2, class="form-control")}}
             <tr>
                <td>
                 <input class="btn btn-primary" type="submit" value="Login" />

@@ -1,0 +1,103 @@
+{%extends 'includes/base.html'%}
+
+{%block title%}Form example{%endblock%}
+
+{%block content%}
+{% from "includes/_formsHelper.html" import showInput%}
+
+<form action="#" method="POST">
+    <table>
+        {{ showInput(form.uNom, class="form-control")}}
+        {{ showInput(form.uSexe, class="form-control")}}
+        {{ showInput(form.uAPropos, class="form-control")}}
+        {{ showInput(form.uAnniversaire, class="form-control")}}
+        {{ showInput(form.uConnecter, class="form-control")}}
+        {{ showInput(form.uEmail, class="form-control")}}
+        {{ showInput(form.uHidden, class="form-control")}}
+        {{ showInput(form.uMdp, class="form-control")}}
+        {{ showInput(form.uMdpConfirmation, class="form-control")}}
+        {{ showInput(form.uRadio, class="form-control")}}
+        {{ showInput(form.uIntegerRange, class="form-control")}}
+        <tr>
+            <td>{{ form.uNom.label }}</td> 
+            <td>
+                {{ form.uNom(class="form-control")}}
+                {% for error in form.uNom.errors %}
+                    <small id="" class="form-text text-muted">
+                        {{ error }}
+                    </small>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uSexe.label }}</td> 
+            <td>
+                {{ form.uSexe(class="form-control")}}
+                {% for error in form.uSexe.errors %}
+                    <small id="" class="form-text text-muted">
+                        {{ error }}
+                    </small>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uAPropos.label }}</td> 
+            <td>
+                {{ form.uAPropos(class="form-control")}}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uMdp.label }}</td> 
+            <td>
+                {{ form.uMdp(class="form-control")}}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uMdpConfirmation.label }}</td> 
+            <td>
+                {{ form.uMdpConfirmation(class="form-control")}}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uConnecter.label }}</td> 
+            <td>
+                {{ form.uConnecter()}}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uAnniversaire.label }}</td> 
+            <td>
+                {{ form.uAnniversaire(class="form-control")}}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uEmail.label }}</td> 
+            <td>
+                {{ form.uEmail(class="form-control")}}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uHidden.label }}</td> 
+            <td>
+                {{ form.uHidden(class="form-control")}}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uIntegerRange.label }}</td> 
+            <td>
+                {{ form.uIntegerRange(class="form-control")}}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.uRadio.label }}</td> 
+            <td>
+                {{ form.uRadio()}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form.btnSubmit(class="btn btn-primary")}}
+            </td>
+        </tr>
+    </table>
+{%endblock%}
